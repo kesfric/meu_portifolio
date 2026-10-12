@@ -9,8 +9,12 @@ export const site = {
   firstName: "Ester",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
 
-  // CONFIRM: your public email and LinkedIn URL.
-  email: "your.name@u.northwestern.edu",
+  // Email is stored in pieces and only assembled when someone clicks it,
+  // so scrapers that read the page HTML don't find a full address.
+  // CONFIRM: that esterborgesfrickes@northwestern.edu is the right address.
+  emailParts: { user: "esterborgesfrickes", host: "northwestern", tld: "edu" },
+
+  // CONFIRM: your LinkedIn URL.
   links: {
     github: "https://github.com/kesfric",
     linkedin: "https://www.linkedin.com/in/your-handle",

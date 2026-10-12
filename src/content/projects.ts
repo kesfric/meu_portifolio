@@ -21,6 +21,8 @@ export type Project = {
   impact: L;
   tech: string[];
   links: { demo?: string; github?: string };
+  /** Optional real screen recording, e.g. "/videos/accessplus.mp4" (put the file in public/videos/). Shown instead of the illustrated walkthrough. */
+  video?: string;
   caseStudy: {
     problem: L;
     solution: L;
@@ -249,7 +251,7 @@ export const projects: Project[] = [
       pt: "Estudantes ficam sabendo de vagas novas no campus sem precisar atualizar o mural.",
     },
     // CONFIRM: add the language/runtime you used (e.g. Python, Node) and where it runs.
-    tech: ["Web scraping", "Scheduled jobs", "Resend API"],
+    tech: ["TypeScript", "Web scraping", "Scheduled jobs", "Resend API"],
     // CONFIRM: GitHub link.
     links: {},
     caseStudy: {
@@ -311,8 +313,8 @@ export const projects: Project[] = [
         pt: "Duas partes: uma base de evidências comparando o que os funcionários dizem sobre IA com o que eles realmente fazem, e o FORGE, um protótipo que transforma a IA numa ferramenta para pensar. Os conceitos incluem Think First (você descreve sua abordagem antes de a IA gerar), Challenge Mode (a IA apresenta alternativas e trade-offs para você decidir) e Active Review (apontando suposições e afirmações incertas).",
       },
       role: {
-        en: "Product Intern. I did the literature review, analyzed the survey and usage data, proposed the company-wide survey and its stakeholder framework, and co-designed FORGE in a team of five.",
-        pt: "Product Intern. Fiz a revisão de literatura, analisei os dados da pesquisa e de uso, propus a pesquisa para a empresa toda com seu mapa de stakeholders, e co-desenhei o FORGE num time de cinco pessoas.",
+        en: "AI Deployment Intern. I did the literature review, analyzed the survey and usage data, proposed the company-wide survey and its stakeholder framework, and co-designed FORGE in a team of five.",
+        pt: "AI Deployment Intern. Fiz a revisão de literatura, analisei os dados da pesquisa e de uso, propus a pesquisa para a empresa toda com seu mapa de stakeholders, e co-desenhei o FORGE num time de cinco pessoas.",
       },
       process: [
         {

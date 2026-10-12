@@ -5,7 +5,7 @@
 
 import { useLocale } from "./providers";
 import { SectionTitle } from "./section-title";
-import { marginNotes, story } from "@/content/experience";
+import { bio, marginNotes, story } from "@/content/experience";
 import { ui } from "@/content/ui";
 
 const tilts = [-2, 1.5, -1, 2, -1.5];
@@ -17,6 +17,8 @@ export function About() {
       <SectionTitle id="about-title" text={ui.about.title} />
       <div className="mt-10 grid gap-12 md:grid-cols-[minmax(0,1fr)_17rem] md:gap-16">
         <div className="max-w-[62ch] space-y-5 text-lg leading-relaxed">
+          {/* Ester's own statement, in the calligraphy font. */}
+          <p className="hand mb-8 border-l-2 border-leaf pl-5 text-[1.55rem] leading-[1.45] md:text-[1.8rem]">{t(bio)}</p>
           {story.map((p, i) => (
             <p key={i}>{t(p)}</p>
           ))}

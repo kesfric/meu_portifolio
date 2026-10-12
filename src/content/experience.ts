@@ -23,7 +23,7 @@ export const experience: Experience[] = [
     id: "cgi",
     org: "CGI",
     initials: "CGI",
-    role: { en: "Product Intern, enterprise AI adoption", pt: "Product Intern, adoção de IA corporativa" },
+    role: { en: "AI Deployment Intern", pt: "AI Deployment Intern" },
     dates: { en: "Jun – Sep 2026", pt: "jun – set 2026" },
     bullets: [
       {
@@ -136,18 +136,17 @@ export const experience: Experience[] = [
     // CONFIRM: one line on what you did here.
     bullets: [],
   },
-  {
-    id: "cbpf",
-    org: "Brazilian Center for Research in Physics",
-    initials: "CBPF",
-    role: { en: "Research Assistant", pt: "Assistente de pesquisa" },
-    // CONFIRM: dates and one line on what you did here.
-    dates: { en: "", pt: "" },
-    bullets: [],
-  },
 ];
 
 // ---- About section ----
+
+// The opening statement of the About section, shown in the calligraphy font.
+// Ester's own words; only English errors were corrected.
+export const bio: L = {
+  en: "I am a Brazilian student who was very interested in STEM + Humanities and in how students learn. I came to Northwestern because it was my favorite (and imo the goated) university, thanks to two programs (the Brazilian Fundação Estudar and the American Better Angels), and also because this is where the Learning Sciences were born. I am also interested in Computer Science, and I am engaging in HCI and Human-Centered AI opportunities while I develop as a cs sis. I love creating ideas and solving puzzles.",
+  // CONFIRM: draft translation, edit it in your own voice.
+  pt: "Sou uma estudante brasileira que sempre se interessou por STEM + Humanidades e por como os estudantes aprendem. Vim para a Northwestern porque era a minha universidade favorita (e, na minha opinião, a melhor de todas), graças a dois programas (a Fundação Estudar, do Brasil, e o Better Angels, dos Estados Unidos) e também porque foi aqui que nasceram as Learning Sciences. Também me interesso por Ciência da Computação e estou me envolvendo em oportunidades de HCI e de IA centrada no ser humano enquanto me desenvolvo como uma cs sis. Eu amo criar ideias e resolver quebra-cabeças.",
+};
 
 // Draft in your voice — edit freely. Each item is one paragraph.
 export const story: L[] = [

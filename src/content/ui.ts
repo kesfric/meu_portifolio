@@ -70,6 +70,7 @@ export const ui = {
     code: { en: "View code on GitHub", pt: "Ver código no GitHub" },
     back: { en: "Back to all projects", pt: "Voltar para os projetos" },
     next: { en: "Next project", pt: "Próximo projeto" },
+    demoTitle: { en: "see it in motion", pt: "veja em movimento" },
   },
   categories: {
     ai: { en: "AI", pt: "IA" },
@@ -78,6 +79,16 @@ export const ui = {
     research: { en: "Research", pt: "Pesquisa" },
   },
   about: { title: { en: "about", pt: "sobre" } },
+  research: {
+    title: { en: "research", pt: "pesquisa" },
+    highSchool: { en: "High school", pt: "Ensino médio" },
+  },
+  fellowships: { title: { en: "fellowships", pt: "bolsas" } },
+  coursework: {
+    title: { en: "coursework", pt: "disciplinas" },
+    graduate: { en: "Graduate level", pt: "Pós-graduação" },
+  },
+  publications: { title: { en: "publications", pt: "publicações" } },
   experience: { title: { en: "experience", pt: "experiência" } },
   skills: {
     title: { en: "skills", pt: "habilidades" },
@@ -103,25 +114,8 @@ export const ui = {
       en: "Recruiting for an internship, building something with AI, or curious about my research? Send me a note.",
       pt: "Recrutando para um estágio, construindo algo com IA ou curiosa(o) sobre a minha pesquisa? Me manda uma mensagem.",
     },
-    name: { en: "Your name", pt: "Seu nome" },
-    email: { en: "Your email", pt: "Seu e-mail" },
-    message: { en: "Message", pt: "Mensagem" },
-    send: { en: "Send message", pt: "Enviar mensagem" },
-    sending: { en: "Sending…", pt: "Enviando…" },
-    sent: { en: "Message sent", pt: "Mensagem enviada" },
-    sentBody: {
-      en: "Thank you! I'll reply to {email} soon.",
-      pt: "Obrigada! Vou responder para {email} em breve.",
-    },
-    sendAnother: { en: "Send another message", pt: "Enviar outra mensagem" },
-    invalid: {
-      en: "Add your name, a valid email and a message, then send again.",
-      pt: "Preencha seu nome, um e-mail válido e a mensagem, e envie de novo.",
-    },
-    failed: {
-      en: "The form couldn't send your message. Email me directly at {email}.",
-      pt: "O formulário não conseguiu enviar. Me escreva direto em {email}.",
-    },
+    emailMe: { en: "Contact me at", pt: "Fale comigo em" },
+    emailHint: { en: "Click to open your email app.", pt: "Clique para abrir o seu app de e-mail." },
     direct: { en: "Or find me here", pt: "Ou me encontre aqui" },
   },
   footer: {

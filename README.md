@@ -28,12 +28,14 @@ Abra http://localhost:3000. Toda vez que você salvar um arquivo, a página atua
 
 | O quê | Arquivo |
 |---|---|
-| E-mail e LinkedIn | `src/content/site.ts` |
+| E-mail (guardado em pedaços, sem formulário) e LinkedIn | `src/content/site.ts` |
 | Sua foto | salve como `public/ester.jpg` e mude `photo: null` para `photo: "/ester.jpg"` em `src/content/site.ts` |
 | Currículo | salve o PDF como `public/resume.pdf` |
 | Projetos (textos, links, stack) | `src/content/projects.ts` |
 | Experiências (datas, bullets) | `src/content/experience.ts` |
 | Habilidades | `src/content/skills.ts` |
+| Pesquisa (ensino médio), bolsas, disciplinas e publicações | `src/content/academics.ts` |
+| Vídeo real do Access+ (opcional) | salve em `public/videos/` e use `video:` em `src/content/projects.ts` |
 | Botões, títulos, mensagens | `src/content/ui.ts` |
 
 Todo texto tem versão `en` e `pt`. Se mudar um, mude o outro.
@@ -42,28 +44,16 @@ Todo texto tem versão `en` e `pt`. Se mudar um, mude o outro.
 
 ---
 
-## 3. Fazer o formulário de contato enviar e-mail (opcional)
-
-Sem isso, o formulário avisa a pessoa para te escrever direto no seu e-mail.
-
-1. **Onde:** resend.com. Crie uma conta e gere uma API key.
-2. **Onde:** pasta do projeto. Copie `.env.example` para um arquivo novo chamado `.env.local` e preencha `RESEND_API_KEY` e `CONTACT_TO_EMAIL` (o e-mail da sua conta Resend).
-3. **Onde:** Terminal. Pare o `npm run dev` (`Ctrl+C`) e rode de novo, para ele ler o `.env.local`.
-
-O `.env.local` nunca vai para o GitHub (está no `.gitignore`).
-
----
-
-## 4. Publicar na Vercel
+## 3. Publicar na Vercel
 
 1. **Onde:** GitHub (github.com/kesfric). Crie um repositório e suba a pasta (sem `node_modules`).
 2. **Onde:** vercel.com → Add New → Project → importe o repositório. A Vercel detecta Next.js sozinha.
-3. **Onde:** Vercel → seu projeto → Settings → Environment Variables. Adicione `NEXT_PUBLIC_SITE_URL` (a URL final do site) e, se fez o passo 3, as duas chaves do Resend.
+3. **Onde:** Vercel → seu projeto → Settings → Environment Variables. Adicione `NEXT_PUBLIC_SITE_URL` (a URL final do site).
 4. Faça um novo deploy para as variáveis valerem.
 
 ---
 
-## 5. Escrever mais palavras com a sua letra
+## 4. Escrever mais palavras com a sua letra
 
 O "ester", o "hi!, oi!" e o "projects" são a sua letra, recortada do esboço. Os outros títulos (about, experience…) usam uma fonte parecida até você trocar.
 
@@ -78,7 +68,7 @@ O "ester", o "hi!, oi!" e o "projects" são a sua letra, recortada do esboço. O
 
 ---
 
-## 6. Antes de publicar
+## 5. Antes de publicar
 
 **Onde:** Terminal.
 
@@ -100,7 +90,6 @@ src/
     layout.tsx               fontes, SEO, script do modo escuro
     page.tsx                 a home (ordem das seções)
     projects/[slug]/page.tsx uma página por projeto
-    api/contact/route.ts     recebe o formulário e envia pelo Resend
     opengraph-image.tsx      imagem que aparece quando alguém compartilha o link
     sitemap.ts, robots.ts    para o Google
     globals.css              cores, marca-texto, botões

@@ -4,6 +4,7 @@
 // the overlay that opens from a card, and the standalone /projects/<slug> page.
 
 import { useLocale } from "./providers";
+import { AccessDemo } from "./access-demo";
 import type { Project } from "@/content/projects";
 import { ui } from "@/content/ui";
 
@@ -49,6 +50,20 @@ export function CaseStudy({ project, as = "h2", titleId }: Props) {
           </div>
         )}
       </header>
+
+      {/* Mini video: a real recording if the project has one, else the illustrated walkthrough (Access+ only). */}
+      {(project.video || project.slug === "accessplus") && (
+        <section className="border-t-2 border-ink px-6 py-10 md:px-14 md:py-14">
+          <Sub className="hand text-[2rem] leading-none md:text-[2.4rem]">{t(ui.caseStudy.demoTitle)}</Sub>
+          <div className="mt-6">
+            {project.video ? (
+              <video src={project.video} controls muted loop playsInline preload="metadata" className="w-full max-w-[64ch] border-2 border-ink" />
+            ) : (
+              <AccessDemo />
+            )}
+          </div>
+        </section>
+      )}
 
       <div className="grid gap-10 border-t-2 border-ink px-6 py-10 md:grid-cols-[200px_minmax(0,1fr)] md:gap-14 md:px-14 md:py-14">
         {/* Side facts */}

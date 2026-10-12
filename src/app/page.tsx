@@ -2,6 +2,7 @@ import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
 import { Experience } from "@/components/experience";
 import { Skills } from "@/components/skills";
+import { Research, Fellowships, Coursework, Publications } from "@/components/academics";
 import { Contact, Resume } from "@/components/contact";
 import { SiteFooter } from "@/components/site-footer";
 import { StickyBar } from "@/components/site-header";
@@ -14,7 +15,6 @@ const personJsonLd = {
   "@type": "Person",
   name: site.name,
   url: site.url,
-  email: `mailto:${site.email}`,
   sameAs: [site.links.github, site.links.linkedin],
   affiliation: { "@type": "CollegeOrUniversity", name: "Northwestern University" },
   knowsAbout: ["Product engineering", "Applied AI", "Human–AI interaction", "Learning sciences", "Software engineering"],
@@ -29,6 +29,10 @@ export default function Home() {
         <Hero />
         <About />
         <Experience />
+        <Research />
+        <Fellowships />
+        <Coursework />
+        <Publications />
         <Skills />
         <Resume />
         <Contact />
