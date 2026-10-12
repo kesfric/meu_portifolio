@@ -47,7 +47,7 @@ export function Resume() {
 }
 
 const { user, host, tld } = site.emailParts;
-const spokenEmail = `${user} at ${host} dot ${tld}`;
+const spokenEmail = `${user} at ${host.replaceAll(".", " dot ")} dot ${tld}`;
 
 function openEmail() {
   window.location.href = `mailto:${user}@${host}.${tld}`;

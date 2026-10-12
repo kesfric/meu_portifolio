@@ -11,8 +11,7 @@ export const site = {
 
   // Email is stored in pieces and only assembled when someone clicks it,
   // so scrapers that read the page HTML don't find a full address.
-  // CONFIRM: that esterborgesfrickes@northwestern.edu is the right address.
-  emailParts: { user: "esterborgesfrickes", host: "northwestern", tld: "edu" },
+  emailParts: { user: "esterborgesfrickes", host: "u.northwestern", tld: "edu" },
 
   // CONFIRM: your LinkedIn URL.
   links: {
@@ -20,9 +19,8 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/your-handle",
   },
 
-  // Put your photo at public/ester.jpg and change this to "/ester.jpg".
-  // While it's null, the hero shows the smiley from your sketch.
-  photo: null as string | null,
+  // Photo shown in the hero blob (public/ester.jpg). Set to null to show the sketch's smiley instead.
+  photo: "/ester.jpg" as string | null,
 
   // Put your PDF at public/resume.pdf.
   resume: "/resume.pdf",

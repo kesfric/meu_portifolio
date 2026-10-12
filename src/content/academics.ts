@@ -85,8 +85,8 @@ export const coursework: Course[] = [
 ];
 
 // ---- Publications ----
-// Add entries as { title, venue, year, url? }. The section stays hidden until
-// there is at least one entry, so no empty heading shows up on the site.
+// Newest first. Add a link with `url` to make the title clickable.
+// The section stays hidden if the list is empty.
 
 export type Publication = {
   title: string;
@@ -96,4 +96,20 @@ export type Publication = {
   url?: string;
 };
 
-export const publications: Publication[] = [];
+export const publications: Publication[] = [
+  {
+    title: "Juventudes no Plano: Propostas de Políticas Públicas relacionadas ao Plano Nacional de Educação e Plano Nacional de Juventude",
+    venue: "Mapa Educação, Instituto Unibanco, Juventudes do Agora (pp. 41–42)",
+    year: "Oct 31, 2024",
+  },
+  {
+    title: "Política Para Todos: Bridging the Gap in Political Representation in Latin America",
+    venue: "Policy Insights #5, pp. 18–19 (Geneva Graduate Institute, NORRAG)",
+    year: "Sep 22, 2024",
+  },
+  {
+    title: "Favelização: Historical Dynamics of Socioeconomic Segregation and Access to Quality Education in Rio de Janeiro",
+    venue: "Harvard International Review",
+    year: "Sep 16, 2024",
+  },
+];
