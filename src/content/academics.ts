@@ -170,7 +170,7 @@ export const courseworkCS: Course[] = [
   { title: "Fundamentals of Computer Programming", code: "COMP_SCI 111", term: fall25 },
   { title: "Fundamentals of Computer Programming 1.5", code: "COMP_SCI 150", term: spring26 },
   { title: "Inclusive Making", code: "COMP_SCI 311", term: spring26 },
-  { title: "Mathematical Foundations of Computer Science I", code: "COMP_SCI 212", term: summer26 },
+  { title: "Discrete Mathematics (Mathematical Foundations of CS I)", code: "COMP_SCI 212", term: summer26 },
   { title: "Data Structures and Algorithms", code: "COMP_SCI 208", term: fall26 },
 ];
 

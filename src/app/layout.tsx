@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
-import "@fontsource/la-belle-aurore/400.css";
+import "@fontsource/gloria-hallelujah/400.css";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { site } from "@/content/site";
