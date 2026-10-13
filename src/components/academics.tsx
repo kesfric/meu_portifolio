@@ -1,13 +1,12 @@
 "use client";
 
-// Four sections that sit between Experience and Skills:
-// Research (high school), Fellowships, Coursework and Publications.
+// Two sections that sit between About and Skills: relevant coursework and publications.
 // All the text lives in src/content/academics.ts.
 
 import { motion } from "motion/react";
 import { useLocale } from "./providers";
 import { SectionTitle } from "./section-title";
-import { courseworkCS, courseworkLS, fellowships, publications, research, type Course } from "@/content/academics";
+import { courseworkCS, courseworkLS, publications, type Course } from "@/content/academics";
 import type { L } from "@/content/site";
 import { ui } from "@/content/ui";
 import { cardShapes, cx } from "@/lib/blobs";
@@ -17,47 +16,6 @@ const wrap = "mx-auto max-w-7xl px-6 py-16 md:px-14 md:py-20";
 /** Green marker label used to highlight high-school research and graduate-level classes. */
 function Tag({ children }: { children: React.ReactNode }) {
   return <span className="marker inline-block px-1.5 text-[0.82rem] font-semibold uppercase tracking-wide">{children}</span>;
-}
-
-export function Research() {
-  const { t } = useLocale();
-  return (
-    <section id="research" aria-labelledby="research-title" className={wrap}>
-      <SectionTitle id="research-title" text={ui.research.title} />
-      <ul className="mt-10 grid gap-8 md:grid-cols-2">
-        {research.map((r) => (
-          <li key={r.id} className="border-2 border-ink px-6 py-6" style={{ borderRadius: "14px 120px 14px 100px / 100px 14px 120px 14px" }}>
-            <Tag>{t(ui.research.highSchool)}</Tag>
-            <h3 className="mt-3 text-xl font-semibold leading-tight tracking-tight">{t(r.title)}</h3>
-            <p className="mt-1 text-graphite">
-              {r.org} · {r.program}
-              {r.years ? ` · ${r.years}` : ""}
-            </p>
-            <p className="mt-3 max-w-[56ch] text-[1.02rem] leading-relaxed">{t(r.summary)}</p>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-}
-
-export function Fellowships() {
-  const { t } = useLocale();
-  return (
-    <section id="fellowships" aria-labelledby="fellowships-title" className={wrap}>
-      <SectionTitle id="fellowships-title" text={ui.fellowships.title} />
-      <ul className="mt-8 space-y-3 text-lg">
-        {fellowships.map((f, i) => (
-          <li key={i} className="grid grid-cols-[1.5rem_1fr] gap-2">
-            <span aria-hidden="true" className="hand text-2xl leading-none text-leaf">
-              ✦
-            </span>
-            <span>{t(f)}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
 }
 
 function CourseCard({ course, shapeIndex }: { course: Course; shapeIndex: number }) {

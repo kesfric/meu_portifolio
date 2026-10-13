@@ -10,6 +10,7 @@ import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useLocale } from "./providers";
 import { SectionTitle } from "./section-title";
+import { experience } from "@/content/experience";
 import { skillClusters } from "@/content/skills";
 import { ui } from "@/content/ui";
 import { cx, sketchyRadius } from "@/lib/blobs";
@@ -51,7 +52,7 @@ export function Skills() {
       <div className="mt-10 grid items-center gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:gap-16">
         <div role="tablist" aria-label={t(ui.skills.title)} className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
           {skillClusters.map((c, i) => {
-            const size = 104 + (c.skills.length + c.usedIn.length) * 7;
+            const size = 104 + (c.skills.length + c.usedIn.length + c.learnedAt.length) * 7;
             const selected = i === active;
             return (
               <motion.button
@@ -100,7 +101,24 @@ export function Skills() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-7 text-sm font-semibold">{t(ui.skills.usedIn)}</p>
+              <p className="mt-7 text-sm font-semibold">{t(ui.skills.learnedAt)}</p>
+              <ul className="mt-2 space-y-1">
+                {cluster.learnedAt.map((id) => {
+                  const e = experience.find((x) => x.id === id);
+                  if (!e) return null;
+                  return (
+                    <li key={id} className="text-[0.98rem] leading-snug">
+                      <span className="font-semibold">{e.org}</span>
+                      <span className="text-graphite">
+                        {" · "}
+                        {t(e.role)}
+                        {t(e.dates) ? ` (${t(e.dates)})` : ""}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+              <p className="mt-6 text-sm font-semibold">{t(ui.skills.usedIn)}</p>
               <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1">
                 {cluster.usedIn.map((u) => (
                   <li key={u.label}>

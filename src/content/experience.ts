@@ -1,6 +1,7 @@
 import type { L } from "./site";
 
-// Timeline entries, newest first. Reorder freely.
+// Roles and activities. They are not shown as a timeline; the Skills section
+// lists them under "Where I learned it" (see `learnedAt` in skills.ts).
 // `logo`: drop a square image in public/logos/ and set e.g. logo: "/logos/cgi.svg".
 // Without it, the timeline shows the organization's initials.
 // Leave `dates` as "" if you'd rather not show them.

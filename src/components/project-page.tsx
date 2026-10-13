@@ -7,7 +7,6 @@ import Link from "next/link";
 import { useLocale } from "./providers";
 import { StickyBar } from "./site-header";
 import { CaseStudy } from "./case-study";
-import { SiteFooter } from "./site-footer";
 import { SkipLink } from "./skip-link";
 import { projects } from "@/content/projects";
 import { ui } from "@/content/ui";
@@ -43,7 +42,6 @@ export function ProjectPage({ slug }: { slug: string }) {
           </nav>
         )}
       </main>
-      <SiteFooter />
     </>
   );
 }

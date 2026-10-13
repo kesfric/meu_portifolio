@@ -1,10 +1,10 @@
 import type { L } from "./site";
 
-// Research (high school), fellowships, coursework and publications.
+// High-school olympiads and research (shown in the About popups), coursework and publications.
 // Everything here is Ester's own list; edit freely. Each text has en + pt.
 
 // ---- Research ----
-// Only high-school research lives here. University research is in experience.ts.
+// High-school research, shown in the popup in the About section.
 
 export type ResearchItem = {
   id: string;
@@ -41,11 +41,72 @@ export const research: ResearchItem[] = [
   },
 ];
 
-// ---- Fellowships ----
+// ---- Olympiad medals ----
+// Shown in the popup in the About section. Grouped by subject.
 
-export const fellowships: L[] = [
-  { en: "Buffett Institute Atlas Fellow", pt: "Buffett Institute Atlas Fellow" },
-  { en: "Undergraduate Research Assistant Program (URAP) Fellow", pt: "Undergraduate Research Assistant Program (URAP) Fellow" },
+export type OlympiadGroup = { id: string; subject: L; items: L[] };
+
+export const olympiadGroups: OlympiadGroup[] = [
+  {
+    id: "economics",
+    subject: { en: "Economics", pt: "Economia" },
+    items: [
+      {
+        en: "Bronze Medalist — International Economics Olympiad's Winter Challenge 2024 (Top 119/1,800+).",
+        pt: "Medalha de bronze — Winter Challenge 2024 da Olimpíada Internacional de Economia (Top 119/1.800+).",
+      },
+    ],
+  },
+  {
+    id: "mathematics",
+    subject: { en: "Mathematics", pt: "Matemática" },
+    items: [
+      {
+        en: "2x Silver Medalist — International Mathematics Without Borders Olympiad 2023 (Regional and National).",
+        pt: "2x Medalha de prata — Olimpíada Internacional Matemática Sem Fronteiras 2023 (Regional e Nacional).",
+      },
+      {
+        en: "Silver, Bronze Medalist — International Mathematics Without Borders Olympiad 2022 (Regional and National).",
+        pt: "Medalhas de prata e de bronze — Olimpíada Internacional Matemática Sem Fronteiras 2022 (Regional e Nacional).",
+      },
+      {
+        en: "2x Honorable Mention — Brazilian Mathematical Olympiad for Public Schools 2022, 2023 (Top 0.3%).",
+        pt: "2x Menção honrosa — Olimpíada Brasileira de Matemática das Escolas Públicas (OBMEP) 2022, 2023 (Top 0,3%).",
+      },
+      {
+        en: "Bronze Medalist — Brazilian Mathematical Olympiad for Public Schools 2021 (Top 0.04%).",
+        pt: "Medalha de bronze — Olimpíada Brasileira de Matemática das Escolas Públicas (OBMEP) 2021 (Top 0,04%).",
+      },
+      {
+        en: "Silver Medalist — Mathematical Olympiad Mandacaru 2023 (Top 3%).",
+        pt: "Medalha de prata — Olimpíada de Matemática Mandacaru 2023 (Top 3%).",
+      },
+    ],
+  },
+  {
+    id: "physics",
+    subject: { en: "Physics", pt: "Física" },
+    items: [
+      {
+        en: "Cooper Key Awardee (Equivalent to Bronze Medalist) — International Physics and Culture Olympiad (IPhCO) 2022.",
+        pt: "Cooper Key (equivalente à medalha de bronze) — Olimpíada Internacional de Física e Cultura (IPhCO) 2022.",
+      },
+      {
+        en: "Bronze Medalist — Brazilian Astronomy Olympiad 2022 (Top 4.81%; invited to join Brazil's International Team selection).",
+        pt: "Medalha de bronze — Olimpíada Brasileira de Astronomia 2022 (Top 4,81%; convidada para a seleção da equipe internacional do Brasil).",
+      },
+    ],
+  },
+  {
+    id: "human-sciences",
+    subject: { en: "Human Sciences", pt: "Ciências Humanas" },
+    items: [
+      {
+        en: "Silver Medalist — Brazilian Olympiad of Human Sciences 2023 (Top 3%).",
+        pt: "Medalha de prata — Olimpíada Brasileira de Ciências Humanas 2023 (Top 3%).",
+      },
+    ],
+  },
 ];
 
 // ---- Coursework ----

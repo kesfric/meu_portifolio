@@ -5,7 +5,6 @@ export const ui = {
   nav: {
     projects: { en: "Projects", pt: "Projetos" },
     about: { en: "About", pt: "Sobre" },
-    experience: { en: "Experience", pt: "Experiência" },
     skills: { en: "Skills", pt: "Habilidades" },
     contact: { en: "Contact", pt: "Contato" },
     menu: { en: "Menu", pt: "Menu" },
@@ -78,12 +77,16 @@ export const ui = {
     product: { en: "Product", pt: "Produto" },
     research: { en: "Research", pt: "Pesquisa" },
   },
-  about: { title: { en: "about", pt: "sobre" } },
-  research: {
-    title: { en: "research", pt: "pesquisa" },
-    highSchool: { en: "High school", pt: "Ensino médio" },
+  about: {
+    title: { en: "about", pt: "sobre" },
+    before: { en: "Before college, I spent high school ", pt: "Antes da faculdade, passei o ensino médio " },
+    olympiads: { en: "competing in math and science olympiads", pt: "competindo em olimpíadas de matemática e ciências" },
+    between: { en: " and ", pt: " e " },
+    research: { en: "doing research", pt: "fazendo pesquisa" },
+    hint: { en: "Hover over (or tap) the highlighted phrases to see more.", pt: "Passe o mouse (ou toque) nas frases destacadas para ver mais." },
+    olympiadsTitle: { en: "Olympiad medals", pt: "Medalhas em olimpíadas" },
+    researchTitle: { en: "High school research", pt: "Pesquisa no ensino médio" },
   },
-  fellowships: { title: { en: "fellowships", pt: "bolsas" } },
   coursework: {
     title: { en: "relevant coursework", pt: "disciplinas relevantes" },
     cs: { en: "Computer Science", pt: "Ciência da Computação" },
@@ -91,13 +94,13 @@ export const ui = {
     graduate: { en: "Graduate level", pt: "Pós-graduação" },
   },
   publications: { title: { en: "publications", pt: "publicações" } },
-  experience: { title: { en: "experience", pt: "experiência" } },
   skills: {
     title: { en: "skills", pt: "habilidades" },
     pick: {
-      en: "Pick an area to see the skills and where I used them.",
-      pt: "Escolha uma área para ver as habilidades e onde eu usei cada uma.",
+      en: "Pick an area to see the skills and where I learned and used them.",
+      pt: "Escolha uma área para ver as habilidades e onde eu aprendi e usei cada uma.",
     },
+    learnedAt: { en: "Where I learned it", pt: "Onde eu aprendi" },
     usedIn: { en: "Where I used it", pt: "Onde eu usei" },
   },
   contact: {
@@ -109,16 +112,5 @@ export const ui = {
     emailMe: { en: "Contact me at", pt: "Fale comigo em" },
     emailHint: { en: "Click to open your email app.", pt: "Clique para abrir o seu app de e-mail." },
     direct: { en: "Or find me here", pt: "Ou me encontre aqui" },
-  },
-  footer: {
-    statement: {
-      en: "Let's build something impactful together.",
-      pt: "Vamos construir juntos algo que faça diferença.",
-    },
-    sketch: {
-      en: "This site started as a sketch on my iPad.",
-      pt: "Este site começou como um esboço no meu iPad.",
-    },
-    seeSketch: { en: "See the sketch", pt: "Ver o esboço" },
   },
 } satisfies Record<string, Record<string, L | L[]>>;

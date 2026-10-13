@@ -32,9 +32,9 @@ Abra http://localhost:3000. Toda vez que você salvar um arquivo, a página atua
 | Sua foto | salve como `public/ester.jpg` e mude `photo: null` para `photo: "/ester.jpg"` em `src/content/site.ts` |
 | Currículo | salve o PDF como `public/resume.pdf` |
 | Projetos (textos, links, stack) | `src/content/projects.ts` |
-| Experiências (datas, bullets) | `src/content/experience.ts` |
+| Experiências (aparecem em "Onde eu aprendi" nas Habilidades) e o texto do About | `src/content/experience.ts` |
 | Habilidades | `src/content/skills.ts` |
-| Pesquisa (ensino médio), bolsas, disciplinas e publicações | `src/content/academics.ts` |
+| Medalhas, pesquisa do ensino médio (popups do About), disciplinas e publicações | `src/content/academics.ts` |
 | Vídeo real do Access+ (opcional) | salve em `public/videos/` e use `video:` em `src/content/projects.ts` |
 | Botões, títulos, mensagens | `src/content/ui.ts` |
 
@@ -99,7 +99,9 @@ src/
     handwriting.tsx          desenha a sua letra
     projects.tsx             filtros, cards e o card que vira estudo de caso
     case-study.tsx           o layout do estudo de caso
-    about.tsx, experience.tsx, skills.tsx, contact.tsx
+    about.tsx                bio + popups (medalhas e pesquisa do ensino médio)
+    academics.tsx            disciplinas e publicações
+    skills.tsx, contact.tsx
     site-header.tsx          logo, menu, EN/PT, modo escuro
     providers.tsx            idioma + movimento reduzido
   content/                   TODO o texto do site mora aqui

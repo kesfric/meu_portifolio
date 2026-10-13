@@ -14,7 +14,7 @@ import { ester } from "@/content/handwriting";
 import { ui } from "@/content/ui";
 import { cx, sketchyRadius } from "@/lib/blobs";
 
-const sections = ["projects", "about", "experience", "skills", "contact"] as const;
+const sections = ["projects", "about", "skills", "contact"] as const;
 
 function NavLinks({ base, onNavigate, className }: { base: string; onNavigate?: () => void; className?: string }) {
   const { t } = useLocale();
