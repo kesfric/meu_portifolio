@@ -140,35 +140,9 @@ export const experience: Experience[] = [
 
 // ---- About section ----
 
-// The opening statement of the About section, shown in the calligraphy font.
-// Ester's own words; only English errors were corrected.
+// The About section: Ester's own words; only English errors were corrected.
 export const bio: L = {
   en: "I am a Brazilian student who was very interested in STEM + Humanities and in how students learn. I came to Northwestern because it was my favorite (and imo the goated) university, thanks to two programs (the Brazilian Fundação Estudar and the American Better Angels), and also because this is where the Learning Sciences were born. I am also interested in Computer Science, and I am engaging in HCI and Human-Centered AI opportunities while I develop as a cs sis. I love creating ideas and solving puzzles.",
   // CONFIRM: draft translation, edit it in your own voice.
   pt: "Sou uma estudante brasileira que sempre se interessou por STEM + Humanidades e por como os estudantes aprendem. Vim para a Northwestern porque era a minha universidade favorita (e, na minha opinião, a melhor de todas), graças a dois programas (a Fundação Estudar, do Brasil, e o Better Angels, dos Estados Unidos) e também porque foi aqui que nasceram as Learning Sciences. Também me interesso por Ciência da Computação e estou me envolvendo em oportunidades de HCI e de IA centrada no ser humano enquanto me desenvolvo como uma cs sis. Eu amo criar ideias e resolver quebra-cabeças.",
 };
-
-// Draft in your voice — edit freely. Each item is one paragraph.
-export const story: L[] = [
-  {
-    en: "I'm from Brazil and came to Northwestern as an international student. Before that, I spent high school competing in math and science olympiads, and co-founded Access+, a free platform that helps Brazilian students find scholarships, olympiads and programs they wouldn't hear about otherwise.",
-    pt: "Sou do Brasil e vim para a Northwestern como estudante internacional. Antes disso, passei o ensino médio competindo em olimpíadas de matemática e ciências, e cofundei o Access+, uma plataforma gratuita que ajuda estudantes brasileiros a encontrar bolsas, olimpíadas e programas que eles não conheceriam de outro jeito.",
-  },
-  {
-    en: "At Northwestern I study Computer Science and Learning Sciences. The question I keep coming back to is what happens to people's thinking when AI does part of the work. It runs through my research, my internship at CGI on enterprise AI adoption, and Paulie, the product I'm building now.",
-    pt: "Na Northwestern eu estudo Ciência da Computação e Learning Sciences. A pergunta à qual eu sempre volto é o que acontece com o raciocínio das pessoas quando a IA faz parte do trabalho. Ela atravessa a minha pesquisa, meu estágio na CGI sobre adoção de IA nas empresas e o Paulie, o produto que estou construindo agora.",
-  },
-  {
-    en: "I like taking a messy problem all the way to something people use: reading the research, talking to the people involved, prototyping fast, and checking afterwards whether it actually helped. Outside of that, I organize — recruiting for BRASA, outreach for Women in Computing, and peer advising for other international students.",
-    pt: "Gosto de levar um problema bagunçado até algo que as pessoas usam: ler a pesquisa, conversar com quem está envolvido, prototipar rápido e depois conferir se aquilo realmente ajudou. Fora isso, eu organizo coisas — recrutamento na BRASA, outreach no Women in Computing e mentoria para outros estudantes internacionais.",
-  },
-];
-
-// Handwritten notes in the margin of the About section.
-export const marginNotes: L[] = [
-  { en: "10+ science olympiad medals", pt: "10+ medalhas em olimpíadas científicas" },
-  { en: "Grace Hopper '26 poster", pt: "pôster no Grace Hopper '26" },
-  { en: "Access+ reached 400K+ people", pt: "Access+ alcançou 400 mil+ pessoas" },
-  { en: "URAP & Buffett Atlas Fellow", pt: "URAP & Buffett Atlas Fellow" },
-  { en: "International Peer Advisor", pt: "International Peer Advisor" },
-];

@@ -3,7 +3,7 @@ import { About } from "@/components/about";
 import { Experience } from "@/components/experience";
 import { Skills } from "@/components/skills";
 import { Research, Fellowships, Coursework, Publications } from "@/components/academics";
-import { Contact, Resume } from "@/components/contact";
+import { Contact } from "@/components/contact";
 import { SiteFooter } from "@/components/site-footer";
 import { StickyBar } from "@/components/site-header";
 import { SkipLink } from "@/components/skip-link";
@@ -34,7 +34,6 @@ export default function Home() {
         <Coursework />
         <Publications />
         <Skills />
-        <Resume />
         <Contact />
       </main>
       <SiteFooter />

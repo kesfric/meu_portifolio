@@ -38,7 +38,7 @@ export const ui = {
       pt: "Aberta a estágios para o verão de 2027",
     },
     seeProjects: { en: "See projects", pt: "Ver projetos" },
-    openResume: { en: "Open resume", pt: "Abrir currículo" },
+    openResume: { en: "Download resume", pt: "Baixar currículo" },
     contactMe: { en: "Contact me", pt: "Falar comigo" },
     photoAlt: { en: "Portrait of Ester", pt: "Retrato da Ester" },
     placeholderAlt: {
@@ -85,7 +85,9 @@ export const ui = {
   },
   fellowships: { title: { en: "fellowships", pt: "bolsas" } },
   coursework: {
-    title: { en: "coursework", pt: "disciplinas" },
+    title: { en: "relevant coursework", pt: "disciplinas relevantes" },
+    cs: { en: "Computer Science", pt: "Ciência da Computação" },
+    ls: { en: "Learning Sciences", pt: "Learning Sciences" },
     graduate: { en: "Graduate level", pt: "Pós-graduação" },
   },
   publications: { title: { en: "publications", pt: "publicações" } },
@@ -97,16 +99,6 @@ export const ui = {
       pt: "Escolha uma área para ver as habilidades e onde eu usei cada uma.",
     },
     usedIn: { en: "Where I used it", pt: "Onde eu usei" },
-  },
-  resume: {
-    title: { en: "resume", pt: "currículo" },
-    body: {
-      en: "One page, tailored for software engineering, product and AI roles.",
-      pt: "Uma página, voltada para vagas de engenharia de software, produto e IA.",
-    },
-    updated: { en: "Updated", pt: "Atualizado em" },
-    view: { en: "View resume", pt: "Ver currículo" },
-    download: { en: "Download PDF", pt: "Baixar PDF" },
   },
   contact: {
     title: { en: "contact", pt: "contato" },

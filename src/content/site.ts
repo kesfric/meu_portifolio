@@ -22,9 +22,8 @@ export const site = {
   // Photo shown in the hero blob (public/ester.jpg). Set to null to show the sketch's smiley instead.
   photo: "/ester.jpg" as string | null,
 
-  // Put your PDF at public/resume.pdf.
+  // The PDF people download from the hero button.
   resume: "/resume.pdf",
-  resumeUpdated: { en: "October 2026", pt: "outubro de 2026" } satisfies L,
 
   description: {
     en: "Computer Science and Learning Sciences student at Northwestern building AI products, software and research about how people think with AI.",

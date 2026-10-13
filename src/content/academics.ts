@@ -49,17 +49,27 @@ export const fellowships: L[] = [
 ];
 
 // ---- Coursework ----
-// `level` highlights graduate-level classes. Leave it out for undergraduate ones.
+// Two groups: Computer Science and Learning Sciences. `level` highlights
+// graduate-level classes; leave it out for undergraduate ones.
 
 export type Course = {
   title: string;
   code?: string;
-  term: L;
+  term?: L;
   level?: L;
   note?: L;
 };
 
-export const coursework: Course[] = [
+export const courseworkCS: Course[] = [
+  { title: "Fundamentals of Computer Programming", code: "COMP_SCI 111" },
+  { title: "Introduction to Computer Programming", code: "COMP_SCI 150" },
+  { title: "Data Structures" },
+  { title: "Discrete Mathematics" },
+  { title: "Linear Algebra" },
+  { title: "Data Structures and Algorithms", code: "COMP_SCI 214", term: { en: "Upcoming", pt: "Em breve" } },
+];
+
+export const courseworkLS: Course[] = [
   {
     title: "Design of Technological Tools for Thinking and Learning",
     code: "LS 426",
@@ -73,15 +83,10 @@ export const coursework: Course[] = [
     level: { en: "Master's-level", pt: "Nível de mestrado" },
     note: { en: "Master in Education class", pt: "Disciplina do mestrado em Educação" },
   },
-  {
-    title: "Inclusive Making",
-    term: { en: "Spring 2025", pt: "Primavera 2025" },
-  },
-  {
-    title: "Data Structures and Algorithms",
-    code: "COMP_SCI 214",
-    term: { en: "Upcoming", pt: "Em breve" },
-  },
+  { title: "Inclusive Making", term: { en: "Spring 2025", pt: "Primavera 2025" } },
+  { title: "Introduction to Psychology", code: "PSYCH 110" },
+  // CONFIRM: the course code (SESP 208?) before adding `code` here.
+  { title: "Qualitative Social Methods" },
 ];
 
 // ---- Publications ----

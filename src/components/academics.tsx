@@ -4,10 +4,13 @@
 // Research (high school), Fellowships, Coursework and Publications.
 // All the text lives in src/content/academics.ts.
 
+import { motion } from "motion/react";
 import { useLocale } from "./providers";
 import { SectionTitle } from "./section-title";
-import { coursework, fellowships, publications, research } from "@/content/academics";
+import { courseworkCS, courseworkLS, fellowships, publications, research, type Course } from "@/content/academics";
+import type { L } from "@/content/site";
 import { ui } from "@/content/ui";
+import { cardShapes, cx } from "@/lib/blobs";
 
 const wrap = "mx-auto max-w-7xl px-6 py-16 md:px-14 md:py-20";
 
@@ -57,24 +60,51 @@ export function Fellowships() {
   );
 }
 
-export function Coursework() {
+function CourseCard({ course, shapeIndex }: { course: Course; shapeIndex: number }) {
   const { t } = useLocale();
+  const shape = cardShapes[shapeIndex % cardShapes.length];
+  return (
+    <motion.li
+      initial={{ rotate: shape.tilt }}
+      whileHover={{ borderRadius: shape.hover, rotate: 0 }}
+      transition={{ duration: 0.45, ease: [0.65, 0, 0.35, 1] }}
+      style={{ borderRadius: shape.rest }}
+      className="flex min-h-[9.5rem] flex-col justify-between border-2 border-ink bg-paper px-6 pb-6 pt-7"
+    >
+      <div>
+        {course.level && <Tag>{`${t(ui.coursework.graduate)} · ${t(course.level)}`}</Tag>}
+        <h4 className={cx("text-[1.2rem] font-semibold leading-tight tracking-tight", course.level && "mt-3")}>
+          <span className="marker marker-sweep">{course.title}</span>
+        </h4>
+        {course.note && <p className="mt-3 text-[0.95rem] leading-snug text-graphite">{t(course.note)}</p>}
+      </div>
+      {(course.code || course.term) && (
+        <p className="mt-4 text-sm text-graphite">{[course.code, course.term ? t(course.term) : null].filter(Boolean).join(" · ")}</p>
+      )}
+    </motion.li>
+  );
+}
+
+function CourseGroup({ title, courses, offset }: { title: L; courses: Course[]; offset: number }) {
+  const { t } = useLocale();
+  return (
+    <div className="mt-10">
+      <h3 className="hand text-[2rem] leading-none md:text-[2.4rem]">{t(title)}</h3>
+      <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {courses.map((c, i) => (
+          <CourseCard key={c.title} course={c} shapeIndex={offset + i} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export function Coursework() {
   return (
     <section id="coursework" aria-labelledby="coursework-title" className={wrap}>
       <SectionTitle id="coursework-title" text={ui.coursework.title} />
-      <ul className="mt-8 grid gap-5 md:grid-cols-2">
-        {coursework.map((c) => (
-          <li key={c.title} className={c.level ? "border-2 border-ink px-5 py-4" : "border-l-2 border-ink/40 px-5 py-4"} style={c.level ? { borderRadius: "10px 60px 10px 50px / 50px 10px 60px 10px" } : undefined}>
-            {c.level && <Tag>{`${t(ui.coursework.graduate)} · ${t(c.level)}`}</Tag>}
-            <h3 className="mt-1 text-lg font-semibold leading-snug">{c.title}</h3>
-            <p className="mt-1 text-sm text-graphite">
-              {c.code ? `${c.code} · ` : ""}
-              {t(c.term)}
-            </p>
-            {c.note && <p className="mt-2 text-[0.98rem] leading-relaxed">{t(c.note)}</p>}
-          </li>
-        ))}
-      </ul>
+      <CourseGroup title={ui.coursework.cs} courses={courseworkCS} offset={0} />
+      <CourseGroup title={ui.coursework.ls} courses={courseworkLS} offset={2} />
     </section>
   );
 }

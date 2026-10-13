@@ -17,6 +17,7 @@ import { SketchFrame } from "./sketch-frame";
 import { HeaderRow } from "./site-header";
 import { RotatingWord } from "./rotating-word";
 import { Magnetic } from "./magnetic";
+import { EmailLink } from "./email-link";
 import { Projects } from "./projects";
 import { hiOi } from "@/content/handwriting";
 import { site } from "@/content/site";
@@ -90,6 +91,10 @@ export function Hero() {
               {t(ui.hero.leadIn)} <RotatingWord words={roles} />
             </p>
 
+            <p className="mt-4">
+              <EmailLink className="text-lg md:text-xl" />
+            </p>
+
             <p className="mt-6 flex items-center gap-2.5 text-sm text-graphite">
               <span className="relative flex h-2.5 w-2.5" aria-hidden="true">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-marker-solid opacity-60 motion-safe:animate-ping" />
@@ -105,7 +110,10 @@ export function Hero() {
                 </a>
               </Magnetic>
               <Magnetic>
-                <a href={site.resume} target="_blank" rel="noopener" className="btn btn-ghost">
+                <a href={site.resume} download="Ester-Borges-Frickes-Ricardo-Resume.pdf" className="btn btn-ghost">
+                  <svg viewBox="0 0 16 16" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M8 2.5v8M4.6 7.4 8 10.7l3.4-3.3M3 13.4h10" />
+                  </svg>
                   {t(ui.hero.openResume)}
                 </a>
               </Magnetic>
