@@ -91,7 +91,8 @@ export function Hero() {
               {t(ui.hero.leadIn)} <RotatingWord words={roles} />
             </p>
 
-            <p className="mt-4">
+            <p className="mt-4 text-lg md:text-xl">
+              <span className="font-semibold">{t(ui.hero.contactMe)}:</span>{" "}
               <EmailLink className="text-lg md:text-xl" />
             </p>
 
@@ -115,11 +116,6 @@ export function Hero() {
                     <path d="M8 2.5v8M4.6 7.4 8 10.7l3.4-3.3M3 13.4h10" />
                   </svg>
                   {t(ui.hero.openResume)}
-                </a>
-              </Magnetic>
-              <Magnetic>
-                <a href="#contact" className="btn btn-ghost">
-                  {t(ui.hero.contactMe)}
                 </a>
               </Magnetic>
             </div>

@@ -1,6 +1,6 @@
 "use client";
 
-// The email shown as words ("name at host dot edu"). The real mailto link is
+// The email shown with brackets ("name [at] host [dot] edu"). The real mailto link is
 // only built when someone clicks it, so scrapers reading the page HTML don't
 // find a full address.
 
@@ -8,7 +8,7 @@ import { site } from "@/content/site";
 import { cx } from "@/lib/blobs";
 
 const { user, host, tld } = site.emailParts;
-const spokenEmail = `${user} at ${host.replaceAll(".", " dot ")} dot ${tld}`;
+const spokenEmail = `${user} [at] ${host.replaceAll(".", " [dot] ")} [dot] ${tld}`;
 
 export function EmailLink({ className, describedBy }: { className?: string; describedBy?: string }) {
   return (

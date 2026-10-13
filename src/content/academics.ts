@@ -42,58 +42,93 @@ export const research: ResearchItem[] = [
 ];
 
 // ---- Olympiad medals ----
-// Shown in the popup in the About section. Grouped by subject.
+// Shown in the popup in the About section, grouped by subject.
+// `tier` picks the medal color; `award` is the text on the badge.
 
-export type OlympiadGroup = { id: string; subject: L; items: L[] };
+export type MedalTier = "silver" | "bronze" | "honor";
+
+export type Medal = {
+  tier: MedalTier;
+  award: L;
+  name: L;
+  year: string;
+  /** Ranking or extra context, e.g. "Top 3%". */
+  detail?: L;
+};
+
+export type OlympiadGroup = { id: string; subject: L; items: Medal[] };
 
 export const olympiadGroups: OlympiadGroup[] = [
-  {
-    id: "economics",
-    subject: { en: "Economics", pt: "Economia" },
-    items: [
-      {
-        en: "Bronze Medalist — International Economics Olympiad's Winter Challenge 2024 (Top 119/1,800+).",
-        pt: "Medalha de bronze — Winter Challenge 2024 da Olimpíada Internacional de Economia (Top 119/1.800+).",
-      },
-    ],
-  },
   {
     id: "mathematics",
     subject: { en: "Mathematics", pt: "Matemática" },
     items: [
       {
-        en: "2x Silver Medalist — International Mathematics Without Borders Olympiad 2023 (Regional and National).",
-        pt: "2x Medalha de prata — Olimpíada Internacional Matemática Sem Fronteiras 2023 (Regional e Nacional).",
+        tier: "silver",
+        award: { en: "2× Silver", pt: "2× Prata" },
+        name: { en: "International Mathematics Without Borders Olympiad", pt: "Olimpíada Internacional Matemática Sem Fronteiras" },
+        year: "2023",
+        detail: { en: "Regional and National", pt: "Regional e Nacional" },
       },
       {
-        en: "Silver, Bronze Medalist — International Mathematics Without Borders Olympiad 2022 (Regional and National).",
-        pt: "Medalhas de prata e de bronze — Olimpíada Internacional Matemática Sem Fronteiras 2022 (Regional e Nacional).",
+        tier: "silver",
+        award: { en: "Silver + Bronze", pt: "Prata + Bronze" },
+        name: { en: "International Mathematics Without Borders Olympiad", pt: "Olimpíada Internacional Matemática Sem Fronteiras" },
+        year: "2022",
+        detail: { en: "Regional and National", pt: "Regional e Nacional" },
       },
       {
-        en: "2x Honorable Mention — Brazilian Mathematical Olympiad for Public Schools 2022, 2023 (Top 0.3%).",
-        pt: "2x Menção honrosa — Olimpíada Brasileira de Matemática das Escolas Públicas (OBMEP) 2022, 2023 (Top 0,3%).",
+        tier: "silver",
+        award: { en: "Silver", pt: "Prata" },
+        name: { en: "Mathematical Olympiad Mandacaru", pt: "Olimpíada de Matemática Mandacaru" },
+        year: "2023",
+        detail: { en: "Top 3%", pt: "Top 3%" },
       },
       {
-        en: "Bronze Medalist — Brazilian Mathematical Olympiad for Public Schools 2021 (Top 0.04%).",
-        pt: "Medalha de bronze — Olimpíada Brasileira de Matemática das Escolas Públicas (OBMEP) 2021 (Top 0,04%).",
+        tier: "bronze",
+        award: { en: "Bronze", pt: "Bronze" },
+        name: { en: "Brazilian Mathematical Olympiad for Public Schools (OBMEP)", pt: "Olimpíada Brasileira de Matemática das Escolas Públicas (OBMEP)" },
+        year: "2021",
+        detail: { en: "Top 0.04%", pt: "Top 0,04%" },
       },
       {
-        en: "Silver Medalist — Mathematical Olympiad Mandacaru 2023 (Top 3%).",
-        pt: "Medalha de prata — Olimpíada de Matemática Mandacaru 2023 (Top 3%).",
+        tier: "honor",
+        award: { en: "2× Honorable Mention", pt: "2× Menção honrosa" },
+        name: { en: "Brazilian Mathematical Olympiad for Public Schools (OBMEP)", pt: "Olimpíada Brasileira de Matemática das Escolas Públicas (OBMEP)" },
+        year: "2022, 2023",
+        detail: { en: "Top 0.3%", pt: "Top 0,3%" },
       },
     ],
   },
   {
     id: "physics",
-    subject: { en: "Physics", pt: "Física" },
+    subject: { en: "Physics & Astronomy", pt: "Física e Astronomia" },
     items: [
       {
-        en: "Cooper Key Awardee (Equivalent to Bronze Medalist) — International Physics and Culture Olympiad (IPhCO) 2022.",
-        pt: "Cooper Key (equivalente à medalha de bronze) — Olimpíada Internacional de Física e Cultura (IPhCO) 2022.",
+        tier: "bronze",
+        award: { en: "Bronze", pt: "Bronze" },
+        name: { en: "Brazilian Astronomy Olympiad", pt: "Olimpíada Brasileira de Astronomia" },
+        year: "2022",
+        detail: { en: "Top 4.81%; invited to Brazil's international team selection", pt: "Top 4,81%; convidada para a seleção da equipe internacional do Brasil" },
       },
       {
-        en: "Bronze Medalist — Brazilian Astronomy Olympiad 2022 (Top 4.81%; invited to join Brazil's International Team selection).",
-        pt: "Medalha de bronze — Olimpíada Brasileira de Astronomia 2022 (Top 4,81%; convidada para a seleção da equipe internacional do Brasil).",
+        tier: "bronze",
+        award: { en: "Cooper Key (≈ Bronze)", pt: "Cooper Key (≈ Bronze)" },
+        name: { en: "International Physics and Culture Olympiad (IPhCO)", pt: "Olimpíada Internacional de Física e Cultura (IPhCO)" },
+        year: "2022",
+      },
+    ],
+  },
+  {
+    id: "economics",
+    subject: { en: "Economics", pt: "Economia" },
+    items: [
+      {
+        tier: "bronze",
+        award: { en: "Bronze", pt: "Bronze" },
+        name: { en: "International Economics Olympiad, Winter Challenge", pt: "Olimpíada Internacional de Economia, Winter Challenge" },
+        year: "2024",
+        detail: { en: "Top 119 of 1,800+", pt: "Top 119 de 1.800+" },
       },
     ],
   },
@@ -102,8 +137,11 @@ export const olympiadGroups: OlympiadGroup[] = [
     subject: { en: "Human Sciences", pt: "Ciências Humanas" },
     items: [
       {
-        en: "Silver Medalist — Brazilian Olympiad of Human Sciences 2023 (Top 3%).",
-        pt: "Medalha de prata — Olimpíada Brasileira de Ciências Humanas 2023 (Top 3%).",
+        tier: "silver",
+        award: { en: "Silver", pt: "Prata" },
+        name: { en: "Brazilian Olympiad of Human Sciences", pt: "Olimpíada Brasileira de Ciências Humanas" },
+        year: "2023",
+        detail: { en: "Top 3%", pt: "Top 3%" },
       },
     ],
   },

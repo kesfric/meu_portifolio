@@ -57,7 +57,7 @@ export function CaseStudy({ project, as = "h2", titleId }: Props) {
           <Sub className="hand text-[2rem] leading-none md:text-[2.4rem]">{t(ui.caseStudy.demoTitle)}</Sub>
           <div className="mt-6">
             {project.video ? (
-              <video src={project.video} controls muted loop playsInline preload="metadata" className="w-full max-w-[64ch] border-2 border-ink" />
+              <video src={project.video} controls muted loop playsInline preload="metadata" className="w-full max-w-4xl rounded-xl border-2 border-ink" />
             ) : (
               <AccessDemo />
             )}

@@ -6,7 +6,6 @@ export const ui = {
     projects: { en: "Projects", pt: "Projetos" },
     about: { en: "About", pt: "Sobre" },
     skills: { en: "Skills", pt: "Habilidades" },
-    contact: { en: "Contact", pt: "Contato" },
     menu: { en: "Menu", pt: "Menu" },
     close: { en: "Close", pt: "Fechar" },
     skip: { en: "Skip to content", pt: "Pular para o conteúdo" },
@@ -86,12 +85,15 @@ export const ui = {
     hint: { en: "Hover over (or tap) the highlighted phrases to see more.", pt: "Passe o mouse (ou toque) nas frases destacadas para ver mais." },
     olympiadsTitle: { en: "Olympiad medals", pt: "Medalhas em olimpíadas" },
     researchTitle: { en: "High school research", pt: "Pesquisa no ensino médio" },
+    placeholder: { en: "hover a highlighted phrase", pt: "passe o mouse numa frase destacada" },
+    close: { en: "Close", pt: "Fechar" },
   },
   coursework: {
     title: { en: "relevant coursework", pt: "disciplinas relevantes" },
     cs: { en: "Computer Science", pt: "Ciência da Computação" },
     ls: { en: "Learning Sciences", pt: "Learning Sciences" },
     graduate: { en: "Graduate level", pt: "Pós-graduação" },
+    hint: { en: "★ graduate-level class. Hover or tap a course for details.", pt: "★ disciplina de pós-graduação. Passe o mouse ou toque numa disciplina para ver detalhes." },
   },
   publications: { title: { en: "publications", pt: "publicações" } },
   skills: {
@@ -102,15 +104,5 @@ export const ui = {
     },
     learnedAt: { en: "Where I learned it", pt: "Onde eu aprendi" },
     usedIn: { en: "Where I used it", pt: "Onde eu usei" },
-  },
-  contact: {
-    title: { en: "contact", pt: "contato" },
-    lead: {
-      en: "Recruiting for an internship, building something with AI, or curious about my research? Send me a note.",
-      pt: "Recrutando para um estágio, construindo algo com IA ou curiosa(o) sobre a minha pesquisa? Me manda uma mensagem.",
-    },
-    emailMe: { en: "Contact me at", pt: "Fale comigo em" },
-    emailHint: { en: "Click to open your email app.", pt: "Clique para abrir o seu app de e-mail." },
-    direct: { en: "Or find me here", pt: "Ou me encontre aqui" },
   },
 } satisfies Record<string, Record<string, L | L[]>>;

@@ -101,7 +101,7 @@ src/
     case-study.tsx           o layout do estudo de caso
     about.tsx                bio + popups (medalhas e pesquisa do ensino médio)
     academics.tsx            disciplinas e publicações
-    skills.tsx, contact.tsx
+    skills.tsx
     site-header.tsx          logo, menu, EN/PT, modo escuro
     providers.tsx            idioma + movimento reduzido
   content/                   TODO o texto do site mora aqui

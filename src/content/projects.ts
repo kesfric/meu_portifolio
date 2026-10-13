@@ -50,6 +50,8 @@ export const projects: Project[] = [
     },
     tech: ["Nuxt 3", "Supabase (Postgres + Auth)", "Gemini API (RAG)", ".NET / C# API", "Vercel", "Beehiiv"],
     links: { demo: "https://www.accessplus.com.br/" },
+    // Screen recording of the live site (www.accessplus.com.br): home, catalog search, filters, an opportunity page.
+    video: "/videos/accessplus.webm",
     caseStudy: {
       problem: {
         en: "Opportunities that change a student's path — scholarships, olympiads, mentorships — are scattered and mostly reach students who already have someone to tell them. In our own survey of young people aged 13 to 24 across 13 Brazilian states, 96.8% wished they had heard about opportunities earlier, and 100% said their socioeconomic situation affects their access.",

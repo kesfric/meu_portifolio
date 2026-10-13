@@ -2,7 +2,6 @@ import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
 import { Skills } from "@/components/skills";
 import { Coursework, Publications } from "@/components/academics";
-import { Contact } from "@/components/contact";
 import { StickyBar } from "@/components/site-header";
 import { SkipLink } from "@/components/skip-link";
 import { site } from "@/content/site";
@@ -29,7 +28,6 @@ export default function Home() {
         <Coursework />
         <Publications />
         <Skills />
-        <Contact />
       </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
     </>
