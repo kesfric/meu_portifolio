@@ -25,9 +25,9 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <Coursework />
-        <Publications />
         <Skills />
+        <Publications />
+        <Coursework />
       </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
     </>

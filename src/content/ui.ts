@@ -91,6 +91,7 @@ export const ui = {
   coursework: {
     title: { en: "relevant coursework", pt: "disciplinas relevantes" },
     cs: { en: "Computer Science", pt: "Ciência da Computação" },
+    math: { en: "Math & Statistics", pt: "Matemática e Estatística" },
     ls: { en: "Learning Sciences", pt: "Learning Sciences" },
     graduate: { en: "Graduate level", pt: "Pós-graduação" },
     hint: { en: "★ graduate-level class. Hover or tap a course for details.", pt: "★ disciplina de pós-graduação. Passe o mouse ou toque numa disciplina para ver detalhes." },

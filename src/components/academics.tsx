@@ -1,13 +1,13 @@
 "use client";
 
-// Two sections that sit between About and Skills: relevant coursework and publications.
+// Two sections: publications (right after Skills) and relevant coursework (after publications).
 // All the text lives in src/content/academics.ts.
 
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useLocale } from "./providers";
 import { SectionTitle } from "./section-title";
-import { courseworkCS, courseworkLS, publications, type Course } from "@/content/academics";
+import { courseworkCS, courseworkLS, courseworkMath, publications, type Course } from "@/content/academics";
 import type { L } from "@/content/site";
 import { ui } from "@/content/ui";
 import { cardShapes, cx, sketchyRadius } from "@/lib/blobs";
@@ -21,6 +21,7 @@ function Tag({ children }: { children: React.ReactNode }) {
 
 const groups: { id: string; title: L; courses: Course[] }[] = [
   { id: "cs", title: ui.coursework.cs, courses: courseworkCS },
+  { id: "math", title: ui.coursework.math, courses: courseworkMath },
   { id: "ls", title: ui.coursework.ls, courses: courseworkLS },
 ];
 

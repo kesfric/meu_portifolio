@@ -148,8 +148,9 @@ export const olympiadGroups: OlympiadGroup[] = [
 ];
 
 // ---- Coursework ----
-// Two groups: Computer Science and Learning Sciences. `level` highlights
-// graduate-level classes; leave it out for undergraduate ones.
+// From Ester's Northwestern transcript (course names, codes and terms only).
+// Three groups: Computer Science, Math & Statistics, Learning Sciences.
+// `level` highlights graduate-level classes; leave it out for undergraduate ones.
 
 export type Course = {
   title: string;
@@ -159,33 +160,46 @@ export type Course = {
   note?: L;
 };
 
+const fall25: L = { en: "Fall 2025", pt: "Outono 2025" };
+const winter26: L = { en: "Winter 2026", pt: "Inverno 2026" };
+const spring26: L = { en: "Spring 2026", pt: "Primavera 2026" };
+const summer26: L = { en: "Summer 2026", pt: "Verão 2026" };
+const fall26: L = { en: "Fall 2026 · in progress", pt: "Outono 2026 · em andamento" };
+
 export const courseworkCS: Course[] = [
-  { title: "Fundamentals of Computer Programming", code: "COMP_SCI 111" },
-  { title: "Introduction to Computer Programming", code: "COMP_SCI 150" },
-  { title: "Data Structures" },
-  { title: "Discrete Mathematics" },
-  { title: "Linear Algebra" },
-  { title: "Data Structures and Algorithms", code: "COMP_SCI 214", term: { en: "Upcoming", pt: "Em breve" } },
+  { title: "Fundamentals of Computer Programming", code: "COMP_SCI 111", term: fall25 },
+  { title: "Fundamentals of Computer Programming 1.5", code: "COMP_SCI 150", term: spring26 },
+  { title: "Inclusive Making", code: "COMP_SCI 311", term: spring26 },
+  { title: "Mathematical Foundations of Computer Science I", code: "COMP_SCI 212", term: summer26 },
+  { title: "Data Structures and Algorithms", code: "COMP_SCI 208", term: fall26 },
+];
+
+export const courseworkMath: Course[] = [
+  { title: "Single-Variable Differential Calculus", code: "MATH 220-1", term: fall25 },
+  { title: "Single-Variable Integral Calculus", code: "MATH 220-2", term: winter26 },
+  { title: "Introduction to Probability and Statistics", code: "STAT 210", term: fall26 },
 ];
 
 export const courseworkLS: Course[] = [
   {
     title: "Design of Technological Tools for Thinking and Learning",
-    code: "LS 426",
-    term: { en: "Winter 2025", pt: "Inverno 2025" },
+    code: "LRN_SCI 326",
+    term: winter26,
     level: { en: "PhD-level", pt: "Nível de doutorado" },
     note: { en: "PhD Computer Science and Learning Sciences class (Education and CS)", pt: "Disciplina do doutorado em Ciência da Computação e Learning Sciences (Educação e CS)" },
   },
   {
-    title: "Cognition and Culture in Thinking and Learning",
-    term: { en: "Spring 2025", pt: "Primavera 2025" },
+    title: "Cognition and Culture in Teaching and Learning",
+    code: "TEACH_ED 329",
+    term: spring26,
     level: { en: "Master's-level", pt: "Nível de mestrado" },
     note: { en: "Master in Education class", pt: "Disciplina do mestrado em Educação" },
   },
-  { title: "Inclusive Making", term: { en: "Spring 2025", pt: "Primavera 2025" } },
-  { title: "Introduction to Psychology", code: "PSYCH 110" },
-  // CONFIRM: the course code (SESP 208?) before adding `code` here.
-  { title: "Qualitative Social Methods" },
+  { title: "Culture, Language, and Identity", code: "LRN_SCI 202", term: spring26 },
+  { title: "Introduction to Social Science Research", code: "SESP 240", term: winter26 },
+  { title: "Introduction to Psychology", code: "PSYCH 110", term: fall25 },
+  { title: "Cognition and Action", code: "LRN_SCI 201", term: fall26 },
+  { title: "Design of Learning Environments: Design Principles", code: "LRN_SCI 301", term: fall26 },
 ];
 
 // ---- Publications ----
