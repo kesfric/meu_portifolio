@@ -7,7 +7,7 @@ import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useLocale } from "./providers";
 import { SectionTitle } from "./section-title";
-import { courseworkCS, courseworkLS, courseworkMath, publications, type Course } from "@/content/academics";
+import { courseworkCS, courseworkLS, courseworkMath, publications, type Course, type Publication } from "@/content/academics";
 import type { L } from "@/content/site";
 import { ui } from "@/content/ui";
 import { cardShapes, cx, sketchyRadius } from "@/lib/blobs";
@@ -138,10 +138,56 @@ export function Coursework() {
               {course.note && <p className="mt-2.5 text-[0.95rem] leading-snug">{t(course.note)}</p>}
             </motion.div>
           </AnimatePresence>
-          <p className="mt-2 text-xs text-graphite">{t(ui.coursework.hint)}</p>
         </div>
       </div>
     </section>
+  );
+}
+
+// Publications as hand-drawn cards: they rise in one after another as the
+// section scrolls into view, and straighten up and lift on hover. A card with
+// a `url` becomes a link.
+function PublicationCard({ pub, index }: { pub: Publication; index: number }) {
+  const reduce = useReducedMotion();
+  const shape = cardShapes[(index + 1) % cardShapes.length];
+  const body = (
+    <>
+      <p className="hand text-[1.6rem] leading-none text-graphite">{pub.year}</p>
+      <h3 className="mt-4 text-[1.08rem] font-semibold leading-snug tracking-tight">
+        <span className="marker marker-sweep">{pub.title}</span>
+      </h3>
+      <p className="mt-auto pt-5 text-sm leading-snug text-graphite">
+        {pub.authors ? `${pub.authors}. ` : ""}
+        {pub.venue}
+      </p>
+      {pub.url && (
+        <span aria-hidden="true" className="mt-3 inline-block text-sm font-semibold transition-transform group-hover:translate-x-1">
+          →
+        </span>
+      )}
+    </>
+  );
+  const className = "group flex h-full flex-col border-2 border-ink bg-paper px-6 pb-6 pt-6 outline-none";
+  return (
+    <motion.li
+      initial={reduce ? false : { opacity: 0, y: 28, rotate: shape.tilt * 2 }}
+      whileInView={{ opacity: 1, y: 0, rotate: shape.tilt }}
+      whileHover={reduce ? undefined : { y: -6, rotate: 0, borderRadius: shape.hover }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ type: "spring", stiffness: 260, damping: 22, delay: reduce ? 0 : index * 0.08 }}
+      style={{ borderRadius: shape.rest }}
+      className="overflow-hidden"
+    >
+      {pub.url ? (
+        <a href={pub.url} target="_blank" rel="noopener" style={{ borderRadius: "inherit" }} className={className}>
+          {body}
+        </a>
+      ) : (
+        <div style={{ borderRadius: "inherit" }} className={className}>
+          {body}
+        </div>
+      )}
+    </motion.li>
   );
 }
 
@@ -151,21 +197,9 @@ export function Publications() {
   return (
     <section id="publications" aria-labelledby="publications-title" className={wrap}>
       <SectionTitle id="publications-title" text={ui.publications.title} />
-      <ul className="mt-8 space-y-5">
-        {publications.map((p) => (
-          <li key={p.title} className="max-w-[70ch] leading-relaxed">
-            {p.url ? (
-              <a href={p.url} target="_blank" rel="noopener" className="ink-link font-semibold">
-                {p.title}
-              </a>
-            ) : (
-              <span className="font-semibold">{p.title}</span>
-            )}
-            <p className="text-graphite">
-              {p.authors ? `${p.authors}. ` : ""}
-              {p.venue}, {p.year}
-            </p>
-          </li>
+      <ul className="mt-10 grid gap-6 md:grid-cols-3">
+        {publications.map((p, i) => (
+          <PublicationCard key={p.title} pub={p} index={i} />
         ))}
       </ul>
     </section>

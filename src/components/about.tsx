@@ -184,13 +184,12 @@ export function About() {
             {t(ui.about.between)}
             {trigger("research", t(ui.about.research))}.
           </p>
-          <p className="mt-2 text-sm text-graphite">{t(ui.about.hint)}</p>
         </div>
 
         {/* Right column on desktop, below the text on phones. */}
-        <div className="relative lg:min-h-[12rem]">
+        <div className="relative">
           <AnimatePresence mode="popLayout" initial={false}>
-            {open ? (
+            {open && (
               <motion.div
                 key={open}
                 id={`about-pop-${open}`}
@@ -220,17 +219,6 @@ export function About() {
                 </div>
                 {open === "olympiads" ? <OlympiadsPanel /> : <ResearchPanel />}
               </motion.div>
-            ) : (
-              <motion.p
-                key="placeholder"
-                aria-hidden="true"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="hand hidden h-full items-center text-[1.6rem] leading-tight text-graphite/70 lg:flex"
-              >
-                ← {t(ui.about.placeholder)}
-              </motion.p>
             )}
           </AnimatePresence>
         </div>

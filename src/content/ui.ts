@@ -82,10 +82,8 @@ export const ui = {
     olympiads: { en: "competing in math and science olympiads", pt: "competindo em olimpíadas de matemática e ciências" },
     between: { en: " and ", pt: " e " },
     research: { en: "doing research", pt: "fazendo pesquisa" },
-    hint: { en: "Hover over (or tap) the highlighted phrases to see more.", pt: "Passe o mouse (ou toque) nas frases destacadas para ver mais." },
     olympiadsTitle: { en: "Olympiad medals", pt: "Medalhas em olimpíadas" },
     researchTitle: { en: "High school research", pt: "Pesquisa no ensino médio" },
-    placeholder: { en: "hover a highlighted phrase", pt: "passe o mouse numa frase destacada" },
     close: { en: "Close", pt: "Fechar" },
   },
   coursework: {
@@ -94,15 +92,10 @@ export const ui = {
     math: { en: "Math & Statistics", pt: "Matemática e Estatística" },
     ls: { en: "Learning Sciences", pt: "Learning Sciences" },
     graduate: { en: "Graduate level", pt: "Pós-graduação" },
-    hint: { en: "★ graduate-level class. Hover or tap a course for details.", pt: "★ disciplina de pós-graduação. Passe o mouse ou toque numa disciplina para ver detalhes." },
   },
   publications: { title: { en: "publications", pt: "publicações" } },
   skills: {
     title: { en: "skills", pt: "habilidades" },
-    pick: {
-      en: "Pick an area to see the skills and where I learned and used them.",
-      pt: "Escolha uma área para ver as habilidades e onde eu aprendi e usei cada uma.",
-    },
     learnedAt: { en: "Where I learned it", pt: "Onde eu aprendi" },
     usedIn: { en: "Where I used it", pt: "Onde eu usei" },
   },

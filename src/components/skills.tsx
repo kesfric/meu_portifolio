@@ -47,7 +47,6 @@ export function Skills() {
   return (
     <section id="skills" aria-labelledby="skills-title" className="mx-auto max-w-7xl px-6 py-20 md:px-14 md:py-28">
       <SectionTitle id="skills-title" text={ui.skills.title} />
-      <p className="mt-4 max-w-[52ch] text-graphite">{t(ui.skills.pick)}</p>
 
       <div className="mt-10 grid items-center gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:gap-16">
         <div role="tablist" aria-label={t(ui.skills.title)} className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
