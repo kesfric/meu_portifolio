@@ -16,13 +16,14 @@ import { cx, sketchyRadius } from "@/lib/blobs";
 
 const sections = ["projects", "about", "skills"] as const;
 
+// Handwritten and lowercase, to match the "ester" logo.
 function NavLinks({ base, onNavigate, className }: { base: string; onNavigate?: () => void; className?: string }) {
   const { t } = useLocale();
   return (
     <ul className={className}>
       {sections.map((s) => (
         <li key={s}>
-          <a href={`${base}#${s}`} onClick={onNavigate} className="group rounded px-1 py-1 text-[0.95rem]">
+          <a href={`${base}#${s}`} onClick={onNavigate} className="hand group rounded px-1 py-1 text-[1.35rem] lowercase leading-none">
             <span className="marker marker-sweep">{t(ui.nav[s])}</span>
           </a>
         </li>

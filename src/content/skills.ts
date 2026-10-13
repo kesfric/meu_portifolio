@@ -1,6 +1,6 @@
 import type { L } from "./site";
 
-// Six clusters. Each skill should be something you'd happily talk about in an
+// Five clusters. Each skill should be something you'd happily talk about in an
 // interview — remove anything you wouldn't.
 // `learnedAt` lists the roles and activities (ids from experience.ts) where
 // these skills were learned. `usedIn` links to projects that show them.
@@ -56,16 +56,6 @@ export const skillClusters: SkillCluster[] = [
     usedIn: [
       { label: "FORGE at CGI", href: "/projects/cgi-forge" },
       { label: "Paulie", href: "/projects/paulie" },
-    ],
-  },
-  {
-    id: "deployment",
-    name: { en: "Deployment", pt: "Deploy" },
-    skills: ["Vercel", "Supabase", "Scheduled jobs", "Transactional email (Resend)", "Enterprise AI rollout research"],
-    learnedAt: ["cgi", "accessplus"],
-    usedIn: [
-      { label: "Access+", href: "/projects/accessplus" },
-      { label: "Job tracker", href: "/projects/job-tracker" },
     ],
   },
   {
